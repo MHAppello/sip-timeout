@@ -7,6 +7,7 @@ var tls = require('tls');
 var os = require('os');
 var crypto = require('crypto');
 var WebSocket = require('ws');
+var dialogTimeout = false;
 
 function debug(e) {
   if(e.stack) {
@@ -779,6 +780,8 @@ function makeUdpTransport(options, callback) {
   var address = options.address || '0.0.0.0';
   var port = options.port || 5060;
 
+  dialogtimeout = options.timeout || 32000;
+  
   var socket = dgram.createSocket(net.isIPv6(address) ? 'udp6' : 'udp4', onMessage); 
   socket.bind(port, address);
 
@@ -1189,7 +1192,8 @@ function createClientTransaction(rq, transport, tu, cleanup) {
       transport(rq);
       if(!transport.reliable)
         e = setTimeout(function() { sm.signal('timerE', 500); }, 500);
-      f = setTimeout(function() { sm.signal('timerF'); }, 32000);
+      //f = setTimeout(function() { sm.signal('timerF'); }, 32000);
+      f = setTimeout(function() { sm.signal('timerF'); }, dialogtimeout);
     },
     leave: function() {
       clearTimeout(e);
