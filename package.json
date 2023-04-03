@@ -1,9 +1,9 @@
 {
   "name": "sip",
-  "description": "Simple SIP implementation",
+  "description": "Simple SIP implementation with Timeout option",
   "version": "0.0.6",
-  "homepage": "http://github.com/kirm/sip.js",
-  "author": "Kirill Mikhailov <kirill.mikhailov@gmail.com>",
+  "homepage": "https://github.com/MHAppello/sip-timeout",
+  "author": "Mark Hall",
   "main": "sip",
   "scripts": {
     "test": "./node_modules/.bin/coffee test/runtests.coffee"
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kirm/sip.js.git"
+    "url": "https://github.com/MHAppello/sip-timeout.git"
   },
   "engines": {
     "node": ">=0.2.2"
