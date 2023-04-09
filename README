@@ -13,4 +13,10 @@ Easiest way is npm.
 
 API
 ---
-API is documented in doc/api.markdown
+API is documented in doc/api.markdown  
+
+Fork  
+---  
+Forked by Mark Hall to add custom timeout option, to reduce from standard 32 seconds.  
+Being used in Appello AWS KamailioChecker & KamailioFailover Lambda apps
+
